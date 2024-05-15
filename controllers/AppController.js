@@ -1,4 +1,4 @@
-/* appcontroller eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default */
 import redisClient from '../utils/redis';
 import dbClient from '../utils/db';
 
@@ -23,7 +23,7 @@ export default class AppController {
   static getStats(req, res) {
     Promise.all([dbClient.nbUsers(), dbClient.nbFiles()]) // This will Get counts of users and files
       .then(([usersCount, filesCount]) => {
-        res.status(200).json({ users: usersCount, files: filesCount }); // This will Respond with the counts
+        res.status(200).json({ users: usersCount, files: filesCount });
       })
       .catch((error) => {
         res.status(500).json({ error: error.message }); // This will Handle potential errors
