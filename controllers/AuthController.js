@@ -4,12 +4,12 @@ import redisClient from '../utils/redis';
 
 export default class AuthController {
   /**
-   * Handles user connection (login).
-   * Generates a unique token, stores it in Redis
+   * This will Handle user connection (login).
+   * This will Generate a unique token, stores it in Redis
    * with a 24-hour expiration,
    * and returns the token to the client.
-   * @param {Object} req - The request object.
-   * @param {Object} res - The response object.
+   * @param {Object} req - This will request object.
+   * @param {Object} res - This will response object.
    */
   static async getConnect(req, res) {
     const { user } = req; // Extract user from request
